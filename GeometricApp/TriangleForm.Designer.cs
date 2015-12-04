@@ -1,4 +1,4 @@
-﻿namespace VisualTriangle
+﻿namespace GeometricApp
 {
     partial class TriangleForm
     {
@@ -28,7 +28,6 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TriangleForm));
             this.pictureBox = new System.Windows.Forms.PictureBox();
             this.checkBox3 = new System.Windows.Forms.CheckBox();
             this.checkBox4 = new System.Windows.Forms.CheckBox();
@@ -43,8 +42,8 @@
             this.label8 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
-            this.textBox8 = new System.Windows.Forms.TextBox();
-            this.textBox9 = new System.Windows.Forms.TextBox();
+            this.AreaTextbox = new System.Windows.Forms.TextBox();
+            this.PerimetrTextbox = new System.Windows.Forms.TextBox();
             this.sides_flowLayoutPanel = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel1 = new System.Windows.Forms.FlowLayoutPanel();
             this.flowLayoutPanel2 = new System.Windows.Forms.FlowLayoutPanel();
@@ -80,7 +79,6 @@
             // 
             this.pictureBox.BackColor = System.Drawing.Color.White;
             this.pictureBox.Cursor = System.Windows.Forms.Cursors.Default;
-            this.pictureBox.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox.Image")));
             this.pictureBox.ImageLocation = "";
             this.pictureBox.Location = new System.Drawing.Point(12, 14);
             this.pictureBox.Name = "pictureBox";
@@ -205,19 +203,19 @@
             this.label11.TabIndex = 31;
             this.label11.Text = "P=";
             // 
-            // textBox8
+            // AreaTextbox
             // 
-            this.textBox8.Location = new System.Drawing.Point(572, 86);
-            this.textBox8.Name = "textBox8";
-            this.textBox8.Size = new System.Drawing.Size(53, 20);
-            this.textBox8.TabIndex = 30;
+            this.AreaTextbox.Location = new System.Drawing.Point(572, 86);
+            this.AreaTextbox.Name = "AreaTextbox";
+            this.AreaTextbox.Size = new System.Drawing.Size(53, 20);
+            this.AreaTextbox.TabIndex = 30;
             // 
-            // textBox9
+            // PerimetrTextbox
             // 
-            this.textBox9.Location = new System.Drawing.Point(572, 61);
-            this.textBox9.Name = "textBox9";
-            this.textBox9.Size = new System.Drawing.Size(54, 20);
-            this.textBox9.TabIndex = 29;
+            this.PerimetrTextbox.Location = new System.Drawing.Point(571, 61);
+            this.PerimetrTextbox.Name = "PerimetrTextbox";
+            this.PerimetrTextbox.Size = new System.Drawing.Size(54, 20);
+            this.PerimetrTextbox.TabIndex = 29;
             // 
             // sides_flowLayoutPanel
             // 
@@ -407,8 +405,9 @@
             this.Calculate.TabIndex = 38;
             this.Calculate.Text = "Посчитать";
             this.Calculate.UseVisualStyleBackColor = true;
+            this.Calculate.Click += new System.EventHandler(this.Calculate_Click);
             // 
-            // Form1
+            // TriangleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -420,8 +419,8 @@
             this.Controls.Add(this.sides_flowLayoutPanel);
             this.Controls.Add(this.label10);
             this.Controls.Add(this.label11);
-            this.Controls.Add(this.textBox8);
-            this.Controls.Add(this.textBox9);
+            this.Controls.Add(this.AreaTextbox);
+            this.Controls.Add(this.PerimetrTextbox);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.AddBisector_Button);
             this.Controls.Add(this.textBox1);
@@ -431,8 +430,9 @@
             this.Controls.Add(this.checkBox4);
             this.Controls.Add(this.checkBox3);
             this.Controls.Add(this.pictureBox);
-            this.Name = "Form1";
+            this.Name = "TriangleForm";
             this.Text = "Triangle";
+            this.Load += new System.EventHandler(this.TriangleForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).EndInit();
             this.sides_flowLayoutPanel.ResumeLayout(false);
             this.flowLayoutPanel1.ResumeLayout(false);
@@ -469,8 +469,8 @@
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
-        private System.Windows.Forms.TextBox textBox8;
-        private System.Windows.Forms.TextBox textBox9;
+        private System.Windows.Forms.TextBox AreaTextbox;
+        private System.Windows.Forms.TextBox PerimetrTextbox;
         private System.Windows.Forms.FlowLayoutPanel sides_flowLayoutPanel;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel1;
         private System.Windows.Forms.FlowLayoutPanel flowLayoutPanel2;

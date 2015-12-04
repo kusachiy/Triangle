@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace VisualTriangle
+namespace GeometricApp
 {
     class SideOrAnglePanel : FlowLayoutPanel
     {

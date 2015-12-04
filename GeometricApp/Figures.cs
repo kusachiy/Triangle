@@ -142,7 +142,7 @@ namespace GeometricApp
         }
         private double ConvertToGradus(double angle)
         {
-            return 180*angle/(float)Math.PI;
+            return Math.Round(180 * angle / (float)Math.PI, 2);
         }
         private double[] ConvertToGradus(double[] angle)
         {
@@ -158,7 +158,7 @@ namespace GeometricApp
         }
         private double SideCalculatorAnIncAngle(double first, double second, double angle)
         {
-            return Math.Sqrt(Math.Pow(first, 2) + Math.Pow(second, 2) - 2 * first * second* Math.Cos(angle));
+            return Math.Round(Math.Sqrt(Math.Pow(first, 2) + Math.Pow(second, 2) - 2 * first * second* Math.Cos(angle)),3);
         }
         private double SineTheoremForAngle(double oppositeSide, double sideX, double angleX)
         {           
