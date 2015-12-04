@@ -167,7 +167,7 @@ namespace GeometricApp
         }
         private double SineTheoremForSide(double oppositeAngle, double sideX, double angleX)
         {
-            return Math.Asin(sideX * Math.Sin(ConvertToRadian(oppositeAngle))/Math.Sin(angleX));
+            return Math.Round(sideX * Math.Sin(oppositeAngle)/Math.Sin(angleX),3);
 
         }
 
