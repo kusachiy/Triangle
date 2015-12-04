@@ -58,16 +58,7 @@ namespace GeometricApp
         void TwoSidesAndIncludedAngle()
         {
             int n = 3 - sides.Keys.ToArray()[0] - sides.Keys.ToArray()[1];
-<<<<<<< HEAD
-<<<<<<< HEAD
-            angles[n] = ConvertToRadian(angles[n]);
-            sides[n] = SideCalculatorAnIncAngle(sides.Values.ToArray()[0],sides.Values.ToArray()[1],angles[n]);
-=======
             sides[n] = SideCalculatorAnIncAngle(sides.Values.ToArray()[0],sides.Values.ToArray()[1],angles.Values.ToArray()[0]);
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-            sides[n] = SideCalculatorAnIncAngle(sides.Values.ToArray()[0],sides.Values.ToArray()[1],angles.Values.ToArray()[0]);
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
             angles[0] = AngleCalculator(sides[0], sides[1], sides[2]);
             angles[1] = AngleCalculator(sides[1], sides[0], sides[2]);
             angles[2] = Math.PI - angles[0] - angles[1];
@@ -77,16 +68,7 @@ namespace GeometricApp
             int n = 3 - sides.Keys.ToArray()[0] - sides.Keys.ToArray()[1];
             int a = angles.Keys.ToArray()[0];
             int b = 3 - n - a;
-<<<<<<< HEAD
-<<<<<<< HEAD
-            angles[a] = ConvertToRadian(angles[a]);
-            angles[b] = SineTheoremForAngle(sides[b], sides[a], angles[a]);
-=======
             angles[b] = SineTheorem(sides[b], sides[a], angles[a]);
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-            angles[b] = SineTheorem(sides[b], sides[a], angles[a]);
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
             angles[n] = Math.PI - angles[a] - angles[b];
             sides[n] = SideCalculatorAnIncAngle(a, b, angles[n]);
 
@@ -94,26 +76,7 @@ namespace GeometricApp
         }
         void OneSideAndTwoAngles()
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            int n = 3 - angles.Keys.ToArray()[0] - angles.Keys.ToArray()[1];
-            int a = GetSidesNumbers(n)[0];
-            int b = GetSidesNumbers(n)[1];              
-            angles[a] = ConvertToRadian(angles[a]);
-            angles[b] = ConvertToRadian(angles[b]);
-            angles[n] = Math.PI - angles[a] - angles[b];
-            int sideKey = sides.Keys.ToArray()[0];
-            a = GetSidesNumbers(sideKey)[0];
-            b = GetSidesNumbers(sideKey)[1];
-            sides[a] = SineTheoremForSide(angles[a], sides[sideKey],angles[sideKey]);
-            sides[b] = SideCalculatorAnIncAngle(sides[a], sides[sideKey], angles[b]);
-
-=======
             
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-            
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
         }
 
         bool HasASolution()
@@ -150,23 +113,7 @@ namespace GeometricApp
         {
             get { return PerimetrCalc(); }
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-        public double GetIncircleRadius
-        {
-            get { return RadiusIncircle(); }
-        }
-        public double GetCircumCircleRadius
-        {
-            get { return CircumCircleRadius(); }
-        }
-
-=======
         
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-        
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
 
         private double ConvertToRadian(double angle)
         {
@@ -184,37 +131,13 @@ namespace GeometricApp
             }
             return angle;
         }
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
 
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
         private double AngleCalculator(double opposite,double second,double third)
         {            
             return Math.Acos((Math.Pow(second, 2) + Math.Pow(third, 2) - Math.Pow(opposite, 2)) / (2 * second * third));
         }
         private double SideCalculatorAnIncAngle(double first, double second, double angle)
         {
-<<<<<<< HEAD
-<<<<<<< HEAD
-            return Math.Sqrt(Math.Pow(first, 2) + Math.Pow(second, 2) - 2 * first * second* Math.Cos(angle));
-        }
-        private double SineTheoremForAngle(double oppositeSide, double sideX, double angleX)
-        {           
-            return Math.Asin((oppositeSide / sideX) * Math.Sin(angleX));
-            
-        }
-        private double SineTheoremForSide(double oppositeAngle, double sideX, double angleX)
-        {
-            return Math.Asin(sideX * Math.Sin(ConvertToRadian(oppositeAngle))/Math.Sin(angleX));
-
-        }
-=======
-=======
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
             return Math.Sqrt(Math.Pow(first, 2) + Math.Pow(second, 2) - 2 * first * second* Math.Cos(ConvertToRadian(angle)));
         }
         private double SineTheorem(double oppositeSide, double sideX, double angleX)
@@ -222,10 +145,6 @@ namespace GeometricApp
             return Math.Asin((oppositeSide / sideX) * Math.Sin(ConvertToRadian(angleX)));
             
         }
-<<<<<<< HEAD
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
 
         private double AreaCalc()
         {
@@ -244,15 +163,7 @@ namespace GeometricApp
         /// Вычисление радиуса вписанной окружности
         /// </summary>
         /// <returns></returns>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        private double RadiusIncircle()
-=======
         private double RadiusIns()
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-        private double RadiusIns()
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
         {
             return Math.Sqrt(((PerimetrCalc() / 2 - sides[0]) * (PerimetrCalc() / 2 - sides[1]) * (PerimetrCalc() / 2 - sides[2])) / (PerimetrCalc() / 2));
         }
@@ -260,15 +171,7 @@ namespace GeometricApp
         /// Вычисление радиуса описанной окружности
         /// </summary>
         /// <returns></returns>
-<<<<<<< HEAD
-<<<<<<< HEAD
-        private double CircumCircleRadius()
-=======
         private double Radius()
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-        private double Radius()
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
         {
             return sides[0] * sides[1] * sides[2] / GetArea;
         }

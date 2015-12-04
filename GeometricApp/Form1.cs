@@ -69,15 +69,7 @@ namespace GeometricApp
             {
                 args[i] = trig.GetSides[i];
                 args[i + 3] = trig.GetAngles[i];
-<<<<<<< HEAD
-<<<<<<< HEAD
-            }            
-=======
             }
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
-=======
-            }
->>>>>>> 8c2d1a557e36b59c25174b00534ae3125b2fd19c
             args[7] = trig.GetArea;
             args[6] = trig.GetPerimetr;
             fTrig.SetTextboxValues(args);
