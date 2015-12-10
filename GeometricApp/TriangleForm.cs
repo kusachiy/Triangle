@@ -16,53 +16,89 @@ namespace GeometricApp
         int sideCounter;
         string alphabet = "abcdefghigklmnopqrstuvwxyz";
         Dictionary<int, double> sides, angles;
-        
+        Dictionary<string, Point> points;
+        Point[] letterPoints;
+        Point[] hightPoints;
+        Dictionary<string, Hight> hights;
+        DrawingClass dc = new DrawingClass();
+        List<TextBox> sidesList, anglesList;
         Triangle trig;
         public TriangleForm()
         {
-
             InitializeComponent();
             g = pictureBox.CreateGraphics();
             sideCounter = 3;
         }
 
+        private string GetFirstLetterOfNewName(string sideName)
+        {
+            sideName = sideName.ToUpper();
+            if (sideName == "AB" || sideName == "BA")
+                return "C";
+            else if (sideName == "AC" || sideName == "CA")
+                return "B";
+            else if (sideName == "BC" || sideName == "CB")
+                return "A";
+            else if (sideName == "")
+                throw new Exception("Введите название стороны в верхнее поле.");
+            else
+                throw new Exception("Такой стороны у треугольника нет. Укажите название одной из сторон треугольника.");
+        }
+
+        public void RedrawHight()
+        {
+
+        }
+
         private void AddHight_Button_Click(object sender, EventArgs e)
         {
-            SideOrAnglePanel sidePanel = new SideOrAnglePanel(alphabet[sideCounter].ToString() + "=", alphabet[sideCounter] + "Angle_textBox");
+            string newSideName = GetFirstLetterOfNewName(sideName_comboBox.Text) + alphabet[sideCounter].ToString().ToUpper();
+            SideOrAnglePanel sidePanel = new SideOrAnglePanel(newSideName + "=", newSideName + "_Side_textBox");
             sideCounter++;
             sides_flowLayoutPanel.Controls.Add(sidePanel);
+            
+            hightPoints = dc.GetPointsForHight(points["B"], points["C"], points["A"]);
+            dc.DrawHight(g, hightPoints[0], hightPoints[1]);
         }
 
         private void Redraw_Button_Click(object sender, EventArgs e)
         {
-
+            g.Clear(Color.White);
+            points = dc.GetPoints(sides, angles);
+            dc.DrawTriangle(g, points);
+            letterPoints = dc.GetPointsForLetters(points);
+            dc.DrawLettersForTriangle(g, letterPoints);
         }
 
         private void Calculate_Click(object sender, EventArgs e)
         {
-            
             sides = new Dictionary<int, double>();
             angles = new Dictionary<int, double>();
-            TextBox[] sidesArray = { aSide_textBox,bSide_textBox,cSide_textBox};
-            TextBox[] anglesArray = { aAngle_textBox, bAngle_textBox, cAngle_textBox };
+            sidesList = new List<TextBox>();
+            sidesList.Add(AB_Side_textBox);
+            sidesList.Add(AC_Side_textBox);
+            sidesList.Add(BC_Side_textBox);
+            anglesList = new List<TextBox>();
+            anglesList.Add(ACB_Angle_textBox);
+            anglesList.Add(ABC_Angle_textBox);
+            anglesList.Add(BAC_Angle_textBox);
             for (int i = 0; i < 3; i++)
             {
-
                 try
                 {
-                    if (sidesArray[i].Text != "")
+                    if (sidesList[i].Text != "")
                     {
-                        sides.Add(i, double.Parse(sidesArray[i].Text));
+                        sides.Add(i, double.Parse(sidesList[i].Text));
 
                     }
-                    if (anglesArray[i].Text != "")
+                    if (anglesList[i].Text != "")
                     {
-                        angles.Add(i, double.Parse(anglesArray[i].Text));
+                        angles.Add(i, double.Parse(anglesList[i].Text));
                     }
                 }
                 catch (Exception)
                 {
-                    MessageBox.Show("Ошибка приведения типа. Неверный воод параметров");
+                    MessageBox.Show("Ошибка приведения типа. Неверный ввод параметров");
                     return;
                 }
             }
@@ -75,20 +111,17 @@ namespace GeometricApp
                 MessageBox.Show(E.Message);
                 return;
             }
-            ReturnedInfo(sidesArray,anglesArray);
+            ReturnedInfo(sidesList,anglesList);
+
         }
 
-        private void TriangleForm_Load(object sender, EventArgs e)
-        {
-            
-        }
 
-        void ReturnedInfo(TextBox[] sidesArr,TextBox[] anglesArr)
+        void ReturnedInfo(List<TextBox> sidesList, List<TextBox> anglesList)
         {
             for (int i = 0; i < 3; i++)
             {
-                sidesArr[i].Text = trig.GetSides[i].ToString();
-                anglesArr[i].Text = trig.GetAngles[i].ToString();
+                sidesList[i].Text = trig.GetSides[i].ToString();
+                anglesList[i].Text = trig.GetAngles[i].ToString();
             }
             AreaTextbox.Text = trig.GetArea.ToString();
             PerimetrTextbox.Text = trig.GetPerimetr.ToString();           

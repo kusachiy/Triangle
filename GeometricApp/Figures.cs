@@ -3,9 +3,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Drawing;
 
 namespace GeometricApp
 {
+    class Hight
+    {
+        double length;
+        Point[] points;
+        public Hight(Point p1, Point p2)
+        {
+            points[0] = p1;
+            points[1] = p2;
+            length = Math.Sqrt((p2.X - p1.X) * (p2.X - p1.X) + (p2.Y - p1.Y) * (p2.Y - p1.Y));
+        }
+    }
 
     class Triangle
     {                

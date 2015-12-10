@@ -15,13 +15,13 @@ namespace GeometricApp
         {
             NameLabel = new Label();
             NameLabel.Text = Name;
-            NameLabel.Font = new System.Drawing.Font(NameLabel.Font.FontFamily, 14);
+            NameLabel.Font = new System.Drawing.Font(NameLabel.Font.FontFamily, 12);
             NameLabel.AutoSize = true;
             textBox = new TextBox();
             textBox.Name = textBoxName;
             Controls.Add(NameLabel);
             Controls.Add(textBox);
-            Size = new System.Drawing.Size(150, 28);
+            Size = new System.Drawing.Size(155, 28);
         }
     }
 }
