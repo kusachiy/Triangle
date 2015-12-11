@@ -20,7 +20,7 @@ namespace GeometricApp
         Point[] letterPoints;
         Point[] hightPoints;
         Dictionary<string, Hight> hights;
-        DrawingClass dc = new DrawingClass();
+        DrawingClass dc;
         List<TextBox> sidesList, anglesList;
         Triangle trig;
         public TriangleForm()
@@ -50,7 +50,7 @@ namespace GeometricApp
 
         }
 
-        private void AddHight_Button_Click(object sender, EventArgs e)
+       /* private void AddHight_Button_Click(object sender, EventArgs e)
         {
             string newSideName = GetFirstLetterOfNewName(sideName_comboBox.Text) + alphabet[sideCounter].ToString().ToUpper();
             SideOrAnglePanel sidePanel = new SideOrAnglePanel(newSideName + "=", newSideName + "_Side_textBox");
@@ -59,15 +59,26 @@ namespace GeometricApp
             
             hightPoints = dc.GetPointsForHight(points["B"], points["C"], points["A"]);
             dc.DrawHight(g, hightPoints[0], hightPoints[1]);
-        }
+        }*/
 
         private void Redraw_Button_Click(object sender, EventArgs e)
         {
-            g.Clear(Color.White);
-            points = dc.GetPoints(sides, angles);
-            dc.DrawTriangle(g, points);
-            letterPoints = dc.GetPointsForLetters(points);
-            dc.DrawLettersForTriangle(g, letterPoints);
+            dc = new DrawingClass(g,sides, angles,trig);
+            g.Clear(Color.White);           
+            
+            dc.DrawTriangle();            
+            dc.DrawLettersForTriangle();
+            if (inCB.Checked)
+                dc.DrawIncircle();
+            if (ccCB.Checked)
+                dc.DrawCircumCircle();
+            if (hiCB.Checked)
+                dc.DrawHights();
+            if (biCB.Checked)
+                dc.DrawBisector();
+            if (mdCB.Checked)
+                dc.DrawMed();
+
         }
 
         private void Calculate_Click(object sender, EventArgs e)
@@ -114,8 +125,6 @@ namespace GeometricApp
             ReturnedInfo(sidesList,anglesList);
 
         }
-
-
         void ReturnedInfo(List<TextBox> sidesList, List<TextBox> anglesList)
         {
             for (int i = 0; i < 3; i++)

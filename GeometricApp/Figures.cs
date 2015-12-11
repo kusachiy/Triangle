@@ -210,7 +210,7 @@ namespace GeometricApp
         /// <returns></returns>
         private double CircumCircleRadius()
         {
-            return sides[0] * sides[1] * sides[2] / GetArea;
+            return sides[0] * sides[1] * sides[2] / (4*GetArea);
         }
         /// <summary>
         /// Вычисление биссектриссы

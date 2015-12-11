@@ -35,3 +35,12 @@ C:\Users\Женя\Desktop\Triangle\GeometricApp\obj\Debug\GeometricApp.csprojRes
 C:\Users\Женя\Desktop\Triangle\GeometricApp\obj\Debug\GeometricApp.Properties.Resources.resources
 C:\Users\Женя\Desktop\Triangle\GeometricApp\obj\Debug\GeometricApp.TriangleForm.resources
 C:\Users\Женя\Desktop\Triangle\GeometricApp\obj\Debug\GeometricApp.csproj.GenerateResource.Cache
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\bin\Debug\GeometricApp.exe.config
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\obj\Debug\GeometricApp.exe
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\obj\Debug\GeometricApp.pdb
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\bin\Debug\GeometricApp.exe
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\bin\Debug\GeometricApp.pdb
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\obj\Debug\GeometricApp.csprojResolveAssemblyReference.cache
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\obj\Debug\GeometricApp.Properties.Resources.resources
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\obj\Debug\GeometricApp.TriangleForm.resources
+C:\Users\Хомяк\Documents\Visual Studio 2015\Projects\CourseWork3Sem\Triangle\GeometricApp\obj\Debug\GeometricApp.csproj.GenerateResource.Cache

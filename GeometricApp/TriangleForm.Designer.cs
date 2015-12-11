@@ -29,12 +29,8 @@
         private void InitializeComponent()
         {
             this.pictureBox = new System.Windows.Forms.PictureBox();
-            this.checkBox3 = new System.Windows.Forms.CheckBox();
-            this.checkBox4 = new System.Windows.Forms.CheckBox();
-            this.AddHight_Button = new System.Windows.Forms.Button();
-            this.AddMedian_Button = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.AddBisector_Button = new System.Windows.Forms.Button();
+            this.inCB = new System.Windows.Forms.CheckBox();
+            this.ccCB = new System.Windows.Forms.CheckBox();
             this.label7 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.AB_Side_textBox = new System.Windows.Forms.TextBox();
@@ -63,7 +59,9 @@
             this.BAC_Angle_textBox = new System.Windows.Forms.TextBox();
             this.Redraw_Button = new System.Windows.Forms.Button();
             this.Calculate = new System.Windows.Forms.Button();
-            this.sideName_comboBox = new System.Windows.Forms.ComboBox();
+            this.hiCB = new System.Windows.Forms.CheckBox();
+            this.biCB = new System.Windows.Forms.CheckBox();
+            this.mdCB = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox)).BeginInit();
             this.sides_flowLayoutPanel.SuspendLayout();
             this.flowLayoutPanel1.SuspendLayout();
@@ -80,73 +78,36 @@
             this.pictureBox.BackColor = System.Drawing.Color.White;
             this.pictureBox.Cursor = System.Windows.Forms.Cursors.Default;
             this.pictureBox.ImageLocation = "";
-            this.pictureBox.Location = new System.Drawing.Point(12, 14);
+            this.pictureBox.Location = new System.Drawing.Point(12, 5);
             this.pictureBox.Name = "pictureBox";
             this.pictureBox.Size = new System.Drawing.Size(350, 350);
             this.pictureBox.TabIndex = 0;
             this.pictureBox.TabStop = false;
             // 
-            // checkBox3
+            // inCB
             // 
-            this.checkBox3.AutoSize = true;
-            this.checkBox3.Location = new System.Drawing.Point(549, 11);
-            this.checkBox3.Name = "checkBox3";
-            this.checkBox3.Size = new System.Drawing.Size(144, 17);
-            this.checkBox3.TabIndex = 3;
-            this.checkBox3.Text = "Вписанная окружность";
-            this.checkBox3.UseVisualStyleBackColor = true;
+            this.inCB.AutoSize = true;
+            this.inCB.Location = new System.Drawing.Point(384, 55);
+            this.inCB.Name = "inCB";
+            this.inCB.Size = new System.Drawing.Size(144, 17);
+            this.inCB.TabIndex = 3;
+            this.inCB.Text = "Вписанная окружность";
+            this.inCB.UseVisualStyleBackColor = true;
             // 
-            // checkBox4
+            // ccCB
             // 
-            this.checkBox4.AutoSize = true;
-            this.checkBox4.Location = new System.Drawing.Point(549, 34);
-            this.checkBox4.Name = "checkBox4";
-            this.checkBox4.Size = new System.Drawing.Size(145, 17);
-            this.checkBox4.TabIndex = 4;
-            this.checkBox4.Text = "Описанная окружность";
-            this.checkBox4.UseVisualStyleBackColor = true;
-            // 
-            // AddHight_Button
-            // 
-            this.AddHight_Button.Location = new System.Drawing.Point(385, 54);
-            this.AddHight_Button.Name = "AddHight_Button";
-            this.AddHight_Button.Size = new System.Drawing.Size(138, 23);
-            this.AddHight_Button.TabIndex = 5;
-            this.AddHight_Button.Text = "Добавить высоту";
-            this.AddHight_Button.UseVisualStyleBackColor = true;
-            this.AddHight_Button.Click += new System.EventHandler(this.AddHight_Button_Click);
-            // 
-            // AddMedian_Button
-            // 
-            this.AddMedian_Button.Location = new System.Drawing.Point(385, 84);
-            this.AddMedian_Button.Name = "AddMedian_Button";
-            this.AddMedian_Button.Size = new System.Drawing.Size(138, 23);
-            this.AddMedian_Button.TabIndex = 6;
-            this.AddMedian_Button.Text = "Добавить медиану";
-            this.AddMedian_Button.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(395, 12);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 13);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "К какой стороне";
-            // 
-            // AddBisector_Button
-            // 
-            this.AddBisector_Button.Location = new System.Drawing.Point(385, 113);
-            this.AddBisector_Button.Name = "AddBisector_Button";
-            this.AddBisector_Button.Size = new System.Drawing.Size(138, 23);
-            this.AddBisector_Button.TabIndex = 10;
-            this.AddBisector_Button.Text = "Добавить биссектрису";
-            this.AddBisector_Button.UseVisualStyleBackColor = true;
+            this.ccCB.AutoSize = true;
+            this.ccCB.Location = new System.Drawing.Point(384, 78);
+            this.ccCB.Name = "ccCB";
+            this.ccCB.Size = new System.Drawing.Size(145, 17);
+            this.ccCB.TabIndex = 4;
+            this.ccCB.Text = "Описанная окружность";
+            this.ccCB.UseVisualStyleBackColor = true;
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(385, 179);
+            this.label7.Location = new System.Drawing.Point(381, 153);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(95, 13);
             this.label7.TabIndex = 21;
@@ -172,7 +133,7 @@
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(577, 179);
+            this.label8.Location = new System.Drawing.Point(579, 153);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(37, 13);
             this.label8.TabIndex = 28;
@@ -181,7 +142,7 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(546, 89);
+            this.label10.Location = new System.Drawing.Point(386, 312);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(20, 13);
             this.label10.TabIndex = 32;
@@ -190,7 +151,7 @@
             // label11
             // 
             this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(546, 64);
+            this.label11.Location = new System.Drawing.Point(386, 287);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(20, 13);
             this.label11.TabIndex = 31;
@@ -198,16 +159,16 @@
             // 
             // AreaTextbox
             // 
-            this.AreaTextbox.Location = new System.Drawing.Point(572, 86);
+            this.AreaTextbox.Location = new System.Drawing.Point(413, 309);
             this.AreaTextbox.Name = "AreaTextbox";
-            this.AreaTextbox.Size = new System.Drawing.Size(53, 20);
+            this.AreaTextbox.Size = new System.Drawing.Size(160, 20);
             this.AreaTextbox.TabIndex = 30;
             // 
             // PerimetrTextbox
             // 
-            this.PerimetrTextbox.Location = new System.Drawing.Point(571, 61);
+            this.PerimetrTextbox.Location = new System.Drawing.Point(412, 284);
             this.PerimetrTextbox.Name = "PerimetrTextbox";
-            this.PerimetrTextbox.Size = new System.Drawing.Size(54, 20);
+            this.PerimetrTextbox.Size = new System.Drawing.Size(161, 20);
             this.PerimetrTextbox.TabIndex = 29;
             // 
             // sides_flowLayoutPanel
@@ -217,9 +178,9 @@
             this.sides_flowLayoutPanel.Controls.Add(this.flowLayoutPanel2);
             this.sides_flowLayoutPanel.Controls.Add(this.flowLayoutPanel3);
             this.sides_flowLayoutPanel.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.sides_flowLayoutPanel.Location = new System.Drawing.Point(385, 195);
+            this.sides_flowLayoutPanel.Location = new System.Drawing.Point(384, 169);
             this.sides_flowLayoutPanel.Name = "sides_flowLayoutPanel";
-            this.sides_flowLayoutPanel.Size = new System.Drawing.Size(189, 169);
+            this.sides_flowLayoutPanel.Size = new System.Drawing.Size(189, 109);
             this.sides_flowLayoutPanel.TabIndex = 33;
             this.sides_flowLayoutPanel.WrapContents = false;
             // 
@@ -294,9 +255,9 @@
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel6);
             this.flowLayoutPanel4.Controls.Add(this.flowLayoutPanel7);
             this.flowLayoutPanel4.FlowDirection = System.Windows.Forms.FlowDirection.TopDown;
-            this.flowLayoutPanel4.Location = new System.Drawing.Point(580, 195);
+            this.flowLayoutPanel4.Location = new System.Drawing.Point(579, 169);
             this.flowLayoutPanel4.Name = "flowLayoutPanel4";
-            this.flowLayoutPanel4.Size = new System.Drawing.Size(205, 169);
+            this.flowLayoutPanel4.Size = new System.Drawing.Size(205, 109);
             this.flowLayoutPanel4.TabIndex = 36;
             // 
             // flowLayoutPanel5
@@ -382,42 +343,62 @@
             // 
             // Redraw_Button
             // 
-            this.Redraw_Button.Location = new System.Drawing.Point(410, 153);
+            this.Redraw_Button.Location = new System.Drawing.Point(384, 5);
             this.Redraw_Button.Name = "Redraw_Button";
-            this.Redraw_Button.Size = new System.Drawing.Size(88, 23);
+            this.Redraw_Button.Size = new System.Drawing.Size(293, 33);
             this.Redraw_Button.TabIndex = 37;
-            this.Redraw_Button.Text = "Перерисовать";
+            this.Redraw_Button.Text = "Вывести изображение";
             this.Redraw_Button.UseVisualStyleBackColor = true;
             this.Redraw_Button.Click += new System.EventHandler(this.Redraw_Button_Click);
             // 
             // Calculate
             // 
-            this.Calculate.Location = new System.Drawing.Point(629, 153);
+            this.Calculate.Location = new System.Drawing.Point(579, 284);
             this.Calculate.Name = "Calculate";
-            this.Calculate.Size = new System.Drawing.Size(88, 23);
+            this.Calculate.Size = new System.Drawing.Size(205, 32);
             this.Calculate.TabIndex = 38;
             this.Calculate.Text = "Посчитать";
             this.Calculate.UseVisualStyleBackColor = true;
             this.Calculate.Click += new System.EventHandler(this.Calculate_Click);
             // 
-            // sideName_comboBox
+            // hiCB
             // 
-            this.sideName_comboBox.FormattingEnabled = true;
-            this.sideName_comboBox.Items.AddRange(new object[] {
-            "AB",
-            "AC",
-            "BC"});
-            this.sideName_comboBox.Location = new System.Drawing.Point(388, 28);
-            this.sideName_comboBox.Name = "sideName_comboBox";
-            this.sideName_comboBox.Size = new System.Drawing.Size(121, 21);
-            this.sideName_comboBox.TabIndex = 39;
+            this.hiCB.AutoSize = true;
+            this.hiCB.Location = new System.Drawing.Point(534, 55);
+            this.hiCB.Name = "hiCB";
+            this.hiCB.Size = new System.Drawing.Size(117, 17);
+            this.hiCB.TabIndex = 39;
+            this.hiCB.Text = "Показать высоты";
+            this.hiCB.UseVisualStyleBackColor = true;
+            // 
+            // biCB
+            // 
+            this.biCB.AutoSize = true;
+            this.biCB.Location = new System.Drawing.Point(535, 78);
+            this.biCB.Name = "biCB";
+            this.biCB.Size = new System.Drawing.Size(145, 17);
+            this.biCB.TabIndex = 40;
+            this.biCB.Text = "Показать биссектрисы";
+            this.biCB.UseVisualStyleBackColor = true;
+            // 
+            // mdCB
+            // 
+            this.mdCB.AutoSize = true;
+            this.mdCB.Location = new System.Drawing.Point(535, 101);
+            this.mdCB.Name = "mdCB";
+            this.mdCB.Size = new System.Drawing.Size(124, 17);
+            this.mdCB.TabIndex = 41;
+            this.mdCB.Text = "Показать медианы";
+            this.mdCB.UseVisualStyleBackColor = true;
             // 
             // TriangleForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(798, 381);
-            this.Controls.Add(this.sideName_comboBox);
+            this.ClientSize = new System.Drawing.Size(794, 368);
+            this.Controls.Add(this.mdCB);
+            this.Controls.Add(this.biCB);
+            this.Controls.Add(this.hiCB);
             this.Controls.Add(this.Calculate);
             this.Controls.Add(this.Redraw_Button);
             this.Controls.Add(this.flowLayoutPanel4);
@@ -428,12 +409,8 @@
             this.Controls.Add(this.AreaTextbox);
             this.Controls.Add(this.PerimetrTextbox);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.AddBisector_Button);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.AddMedian_Button);
-            this.Controls.Add(this.AddHight_Button);
-            this.Controls.Add(this.checkBox4);
-            this.Controls.Add(this.checkBox3);
+            this.Controls.Add(this.ccCB);
+            this.Controls.Add(this.inCB);
             this.Controls.Add(this.pictureBox);
             this.Name = "TriangleForm";
             this.Text = "Triangle";
@@ -460,12 +437,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox;
-        private System.Windows.Forms.CheckBox checkBox3;
-        private System.Windows.Forms.CheckBox checkBox4;
-        private System.Windows.Forms.Button AddHight_Button;
-        private System.Windows.Forms.Button AddMedian_Button;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button AddBisector_Button;
+        private System.Windows.Forms.CheckBox inCB;
+        private System.Windows.Forms.CheckBox ccCB;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox AB_Side_textBox;
@@ -494,7 +467,9 @@
         private System.Windows.Forms.TextBox BAC_Angle_textBox;
         private System.Windows.Forms.Button Redraw_Button;
         private System.Windows.Forms.Button Calculate;
-        private System.Windows.Forms.ComboBox sideName_comboBox;
+        private System.Windows.Forms.CheckBox hiCB;
+        private System.Windows.Forms.CheckBox biCB;
+        private System.Windows.Forms.CheckBox mdCB;
     }
 }
 
